@@ -23,7 +23,6 @@ body, section{
 section{
     position: block;
     font-family: 'Heebo', sans-serif;
-    overflow: hidden;
     min-height: 100vh;
 }
 
@@ -71,7 +70,7 @@ section{
 }
 
 .first-section > .container{
-    padding: 1rem;
+    padding: 2rem 5rem 2rem 5rem;
     display: grid;
     grid-template-areas: 
     "nav nav"
@@ -113,7 +112,6 @@ section > .container > h1{
 section:nth-of-type(1) > .container > div:nth-child(1){
     position: sticky;
     grid-area: nav;
-    white-space: nowrap;
     min-height: 10rem;
 }
 
@@ -196,7 +194,6 @@ section:nth-of-type(1) > .container > div:nth-child(3) > div:nth-child(1){
     align-items: center;
     justify-content: center;
     border-radius: 2em;
-    overflow: hidden;
 }
 
 
@@ -207,9 +204,7 @@ section:nth-of-type(1) > .container > div:nth-child(3) > div:nth-child(1){
     height: 400px;
 }
 
-.swiper-slide{
-    overflow: hidden;
-}
+
 
 .swiper-slide img{
     max-width: 100%;
@@ -336,7 +331,7 @@ section:nth-of-type(4) > .container > h1{
 }
 
 section:nth-of-type(4) > .container > div:nth-of-type(1){
-    min-height: 80vh;
+    min-height: 100vh;
     justify-content: space-around;
 }
 
@@ -415,7 +410,7 @@ section:nth-of-type(4) > .container > .rows > div{
     font-size: 2rem;
     padding: 5% 30%;
     transition: all 0.5s ease;
-
+    
 }
 
 .body-tag > button:hover{
@@ -423,12 +418,22 @@ section:nth-of-type(4) > .container > .rows > div{
     border-radius: 4rem;
 }
 
+
+
 /*////////////////////////////////////////////////////////////////*/
 /*RESPONSIVE SECTION*/
+
+@media only screen and (min-width: 1500px){
+    .container{
+        padding: 50px 200px 50px 200px;
+    }
+}
 
 @media only screen and (max-width: 1024px){
     /*////////////////////////////////////////////////////////////////*/
     /*GENERAL ATTRIBUTES*/
+
+    
 
     section:nth-of-type(1) > .container{
         display: grid;
@@ -541,3 +546,81 @@ section:nth-of-type(4) > .container > .rows > div{
 
 }
 
+@media only screen and (max-width: 600px){
+    section:nth-of-type(1) > .container{
+        min-width: 0;
+        display: grid;
+        grid-template-areas: 
+        "nav"
+        "body-left"
+        "body-right";
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 40% 50%;
+        
+    }
+
+    section:nth-of-type(1) > .container > div:nth-child(2){
+        font-size: 17px;
+        align-items: flex-start;
+        justify-content: flex-left;
+        text-align: left;
+        min-width: none;
+        overflow: hidden;
+
+    }
+
+    section{
+        min-height: 0;
+    }
+    section:nth-of-type(1) > .container > div:nth-child(1) > div > ul{
+        justify-content: flex-start;
+        font-size: 0.5em;
+    }
+
+    .navigation > div > ul > li:nth-child(-n+2){
+        display: none;
+    }
+
+    
+    .navigation > div > ul > li:nth-child(4) > *:hover{
+        background-color: var(--white-theme2);
+    }
+
+    .swiper{
+        width: 250px;
+        height: 250px;
+    }
+
+    section{
+        padding: 0;
+    }
+
+    .container{
+        padding: 1em;
+    }
+
+    section > .container > h1{
+        font-size: 3em;
+    }
+
+    .rows {
+        margin: 0;
+    }
+
+    section:nth-of-type(3) > .container > div{
+        min-width: 0;
+    }
+
+    .photo-side > img{
+        border-radius: 0;
+        width: 100%;
+    }
+    section:nth-of-type(4) > .container > .rows > div{
+        padding: 10px;
+        width: 100%;
+    }
+
+    .item-text-side{
+        font-size: 0.8em;
+    }
+}
